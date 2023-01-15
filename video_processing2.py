@@ -72,6 +72,9 @@ while True:
     # Check if the phone was in the frame for a certain number of frames
     if phone_in_hand:
         if frame_count > 30: # Number of frames to consider phone in use
+            cv2.imshow('Phone Detection', frame)
             print("Phone in use for more than 30 frames")
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
     else:
         print("Phone not in use")
